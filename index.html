@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="./public/assets/css/bootstrap.min.css" rel="stylesheet">
+    <title>Hello, world!</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./public/assets/css/style.css">
+    <link rel="stylesheet" href="./public/assets/css/media.css">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <p class="text-center w-100"><a class="navbar-brand" href="#">Weather Application</a></p>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-sm-12 col-md-6 mb-4">
+                <div class="card bg-dark">
+                    <div class="card-header">
+                        <h4 class="text-light">Now You can search weather of your city</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="countryCode" class="form-label text-light">Country</label>
+                              <input type="text" class="form-control" id="countryCode" aria-describedby="countryCodeHelp" placeholder="Type your Country Code (First 2 letters)">
+                              <div id="countryCodeHelp" class="form-text">Try two-letter country codes for Ex: "BD".</div>
+                            </div>
+                            <div class="mb-3">
+                              <label for="cityNameInput" class="form-label text-light">City</label>
+                              <input type="text" class="form-control" id="cityNameInput" placeholder="Type your city name to get the weather update">
+                            </div>
+                            <button type="submit" class="btn btn-light btn-sm">Get Weather</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 mb-4">
+                <div class="card shadow text-center">
+                    <div class="card-header">
+                        <h5 id="cityNameDisplay">Rangpur</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-info" id="cityFeelDisplay">Clear Sky</p>
+                        <hr>
+                        <p>Temperature: <span id="cityTemperatureDisplay">184.43C</span></p>
+                        <p>Pressure: <span id="cityPressureDisplay">1016Kpa</span></p>
+                        <hr>
+                        <p>Humidity <span  id="cityHumidityDisplay">43</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="./public/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./public/assets/js/main.js"></script>
+  </body>
+</html>
