@@ -42,8 +42,8 @@
                               <div id="countryCodeHelp" class="form-text">Try two-letter country codes for Ex: "BD".</div>
                             </div>
                             <div class="mb-3">
-                              <label for="cityNameInput" class="form-label text-light">City</label>
-                              <input type="text" class="form-control" id="cityNameInput" placeholder="Type your city name to get the weather update">
+                              <label for="cityNameInput" class="form-label text-light">Division</label>
+                              <input type="text" class="form-control" id="cityNameInput" placeholder="Type your Division name to get the weather update">
                             </div>
                             <button type="submit" class="btn btn-light btn-sm">Get Weather</button>
                           </form>
@@ -53,15 +53,18 @@
             <div class="col-sm-12 col-md-6 mb-4">
                 <div class="card shadow text-center">
                     <div class="card-header">
-                        <h5 id="cityNameDisplay">Rangpur</h5>
+                        <h5 id="cityNameDisplay"></h5>
                     </div>
                     <div class="card-body">
-                        <p class="text-info" id="cityFeelDisplay">Clear Sky</p>
+                        <div>
+                            <img id="temperatureIconDisplay" src="" alt="">
+                        </div>
+                        <p class="text-info" id="cityFeelDisplay"></p>
                         <hr>
-                        <p>Temperature: <span id="cityTemperatureDisplay">184.43</span>C</p>
-                        <p>Pressure: <span id="cityPressureDisplay">1016</span>Kpa</p>
+                        <p>Temperature: <span id="cityTemperatureDisplay"></span>C</p>
+                        <p>Pressure: <span id="cityPressureDisplay"></span>Kpa</p>
                         <hr>
-                        <p>Humidity <span  id="cityHumidityDisplay">43</span></p>
+                        <p>Humidity <span  id="cityHumidityDisplay"></span></p>
                     </div>
                 </div>
             </div>

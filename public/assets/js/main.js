@@ -18,8 +18,8 @@
     }
 
     const localStore = {
-        privateCity: '',
-        privateCountry: '',
+        privateCity: 'Dhaka',
+        privateCountry: 'BD',
         API_KEY:'sdadsadadsasd',
         set city(cityName){
             this.privateCity = cityName;
@@ -41,12 +41,13 @@
             const cityNameInput = document.querySelector('#cityNameInput');
             const formElem = document.querySelector('#formElem');
             const cityNameDisplay = document.querySelector('#cityNameDisplay');
+            const temperatureIconDisplay = document.querySelector('#temperatureIconDisplay');
             const cityFeelDisplay = document.querySelector('#cityFeelDisplay');
             const cityTemperatureDisplay = document.querySelector('#cityTemperatureDisplay');
             const cityPressureDisplay = document.querySelector('#cityPressureDisplay');
             const cityHumidityDisplay = document.querySelector('#cityHumidityDisplay');
             const messageDisplay = document.querySelector('#messageDisplay');
-            return {countryCode,cityNameInput,formElem,cityNameDisplay,cityFeelDisplay,cityTemperatureDisplay,cityPressureDisplay,cityHumidityDisplay, messageDisplay}
+            return {countryCode,cityNameInput,formElem,cityNameDisplay,temperatureIconDisplay,cityFeelDisplay,cityTemperatureDisplay,cityPressureDisplay,cityHumidityDisplay, messageDisplay}
         },
         getInputValues(){
             const {countryCode,cityNameInput}=this.loadingAllNecessarySelectors();
@@ -70,14 +71,14 @@
         },
         getIconSrc(iconCode){ return `https://openweathermap.org/img/w/${iconCode}.png`; },
         displayCurrentWeather(data){
-            const {cityNameDisplay,cityFeelDisplay,cityTemperatureDisplay,cityPressureDisplay,cityHumidityDisplay} = this.loadingAllNecessarySelectors();
+            const {cityNameDisplay,temperatureIconDisplay,cityFeelDisplay,cityTemperatureDisplay,cityPressureDisplay,cityHumidityDisplay} = this.loadingAllNecessarySelectors();
             const {main, weather, name} = data;
             cityNameDisplay.textContent =  name;
             cityFeelDisplay.textContent= weather[0].description;
             cityTemperatureDisplay.textContent = main.temp;
             cityPressureDisplay.textContent = main.pressure;
             cityHumidityDisplay.textContent = main.humidity;
-            // temperatureIconDisplay.setAttribute('src',this.getIconSrc(weather[0].icon));
+            temperatureIconDisplay.setAttribute('src',this.getIconSrc(weather[0].icon));
         },
         resetInput(){
             const {countryCode,cityNameInput} = this.loadingAllNecessarySelectors();
@@ -115,12 +116,23 @@
 
             })
 
-            // document.addEventListener('DOMContentLoaded', e=>{
-            //     e.preventDefault();
-            //     // Load data from Local Storage
+            document.addEventListener('DOMContentLoaded', e=>{
+                e.preventDefault();
+                // Load data from Local Storage
                 
 
-            // })
+            })
+            document.addEventListener('DOMContentLoaded', async(e) => {
+                if(localStorage.getItem('BD-weather-city')){
+                    dataStore.city = localStorage.getItem('BD-weather-city') 
+                }
+                if(localStorage.getItem('BD-weather-country')){
+                    dataStore.country= localStorage.getItem('BD-weather-country') 
+               }
+               const data = await dataStore.fetchData()
+               console.log(data);
+               this.displayCurrentWeather(data)
+           })
 
         }
     }
