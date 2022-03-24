@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="./public/assets/css/bootstrap.min.css" rel="stylesheet">
-    <title>Hello, world!</title>
+    <title>Weather App</title>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./public/assets/css/style.css">
@@ -32,9 +32,10 @@
                 <div class="card bg-dark">
                     <div class="card-header">
                         <h4 class="text-light">Now You can search weather of your city</h4>
+                        <div class="my-4" id="messageDisplay"></div>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form id="formElem">
                             <div class="mb-3">
                               <label for="countryCode" class="form-label text-light">Country</label>
                               <input type="text" class="form-control" id="countryCode" aria-describedby="countryCodeHelp" placeholder="Type your Country Code (First 2 letters)">
@@ -57,8 +58,8 @@
                     <div class="card-body">
                         <p class="text-info" id="cityFeelDisplay">Clear Sky</p>
                         <hr>
-                        <p>Temperature: <span id="cityTemperatureDisplay">184.43C</span></p>
-                        <p>Pressure: <span id="cityPressureDisplay">1016Kpa</span></p>
+                        <p>Temperature: <span id="cityTemperatureDisplay">184.43</span>C</p>
+                        <p>Pressure: <span id="cityPressureDisplay">1016</span>Kpa</p>
                         <hr>
                         <p>Humidity <span  id="cityHumidityDisplay">43</span></p>
                     </div>
