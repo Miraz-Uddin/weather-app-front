@@ -130,7 +130,7 @@
                     dataStore.country= localStorage.getItem('BD-weather-country') 
                }
                const data = await dataStore.fetchData()
-               console.log(data);
+            //    console.log(data);
                this.displayCurrentWeather(data)
            })
 
