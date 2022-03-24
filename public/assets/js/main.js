@@ -2,8 +2,8 @@
 (function(){
 
     const dataStore = {
-        privateCity: '',
-        privateCountry: '',
+        privateCity: 'Dhaka',
+        privateCountry: 'BD',
         API_KEY:'4849115e272cdeceb2c8b31f1db3a7d6',
         set city(cityName){
             this.privateCity = cityName;
@@ -34,8 +34,6 @@
     }
 
     const UI = {
-        city: '',
-        country: '',
         loadingAllNecessarySelectors(){
             const countryCode = document.querySelector('#countryCode');
             const cityNameInput = document.querySelector('#cityNameInput');
